@@ -63,6 +63,12 @@ pcd.colors = o3d.utility.Vector3dVector(colors)
 
 # --- Visualize ---
 o3d.visualization.draw_geometries([pcd], window_name="COLMAP Sparse Reconstruction")
+
+
+# --- Save the point cloud as PLY ---
+output_ply_path = os.path.join(output_path, "sparse_point_cloud.ply")
+o3d.io.write_point_cloud(output_ply_path, pcd)
+print(f"Saved point cloud to {output_ply_path}")
 #
 #
 #
